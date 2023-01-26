@@ -1,10 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 
 export class LoginFormC extends React.Component {
       state = {
         email : '' ,
         password : ''
+      }
+
+      componentDidMount () {
+        console.log("class component did mount")
+      }
+      componentDidUpdate() {
+        console.log("class component did update")
+      }
+      componentWillUnmount() {
+        console.log("class component will unmount")
       }
       handleEmail =(e) => {
         this.setState({
@@ -17,6 +27,9 @@ export class LoginFormC extends React.Component {
          password :  e.target.value 
         })
       }
+
+
+
      
     render () {
         
@@ -36,7 +49,17 @@ export function LoginFormF (){
     const [email , setEmail] = useState('');
     const [password , setPassword] = useState('');
    
+  
+
+     useEffect( ()=> {
+       console.log("Function Component did mount ")
+     } , []);
      
+     useEffect( () => {
+        if(email === '')
+           return ;
+        console.log("Function Component did amout update")
+     } ,[email , password])
      function handleEmail (e) {
         setEmail(e.target.email);
      }
