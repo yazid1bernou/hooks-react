@@ -10,7 +10,7 @@ import { useContext } from "react";
 import Header from "./components/Header";
 import Login from "./components/Login";
 import  { AuthContext , AuthProvider } from "./Context/AuthContext";
-
+import { FunctionComponents } from "./components/FunctionComponent";
 
  /*  const [visible , setVisible ] = useState(true);  */
    
@@ -27,7 +27,9 @@ import  { AuthContext , AuthProvider } from "./Context/AuthContext";
               }
              
                 
-           
+            <FunctionComponents />
+              
+            
       {/*    <ThemeProvider> 
                 <Header />
                 <Login />

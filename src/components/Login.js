@@ -6,6 +6,7 @@ export default function Login () {
     const [password ,  setPassword] = useState('');
     const authContext =  useContext(AuthContext);
     function login (e) {
+        // send API request to validate data 
         e.preventDefault();
         if(password === '123'){
             const token = '1fgdsdjsjsdh84'
