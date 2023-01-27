@@ -1,19 +1,34 @@
-import { useState } from "react"
-import {LoginFormC , LoginFormF} from "./LoginForm";
+
+/* import {LoginFormC , LoginFormF} from "./LoginForm";
 import { ThemeProvider } from "./ThemeContext";
 import Header from "./Header";
 import Login from "./Login";
 import ToggleTheme from "./ToggleTheme";
-function App() {
 
-  const [visible , setVisible ] = useState(true); 
+ */
+import { useContext } from "react";
+import Header from "./components/Header";
+import Login from "./components/Login";
+import  { AuthContext , AuthProvider } from "./Context/AuthContext";
+
+
+ /*  const [visible , setVisible ] = useState(true);  */
    
-    
+ function App() {
+  
+  const authContext =  useContext(AuthContext)
   return (
     
-    <div>
-
-         <ThemeProvider> 
+    <div className="container">
+            
+              <Header />
+              { authContext.auth.email ? 'Welcome' :
+              <Login />
+              }
+             
+                
+           
+      {/*    <ThemeProvider> 
                 <Header />
                 <Login />
                 <hr/>
@@ -31,11 +46,19 @@ function App() {
         
           }   
         
-          <button type="button" onClick={() =>  setVisible( ! visible)}> Button Visible</button> 
+          <button type="button" onClick={() =>  setVisible( ! visible)}> Button Visible</button>  */}
           
     </div>
   );
 }
 
+function AppWithSrore () {
+  return (
+    <AuthProvider>
+       <App  />
+    </AuthProvider>
+  )
+  
+}
 
-export default App; 
+export default AppWithSrore; 

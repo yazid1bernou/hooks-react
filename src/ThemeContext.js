@@ -6,6 +6,7 @@ export const ThemeContext = React.createContext();
 export function ThemeProvider (props) {
      // state 
      const [theme , setTheme] =  useState('dark');
+     
      function toggleTheme () {
         setTheme(theme === 'dark' ? 'light' : 'dark');
      }
