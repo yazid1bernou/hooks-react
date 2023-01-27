@@ -11,6 +11,7 @@ import Header from "./components/Header";
 import Login from "./components/Login";
 import  { AuthContext , AuthProvider } from "./Context/AuthContext";
 import { FunctionComponents } from "./components/FunctionComponent";
+import Count from "./components/Count";
 
  /*  const [visible , setVisible ] = useState(true);  */
    
@@ -28,6 +29,9 @@ import { FunctionComponents } from "./components/FunctionComponent";
              
                 
             <FunctionComponents />
+            <Count />
+              
+           
               
             
       {/*    <ThemeProvider> 
