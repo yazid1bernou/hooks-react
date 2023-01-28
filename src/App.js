@@ -13,6 +13,8 @@ import  { AuthContext , AuthProvider } from "./Context/AuthContext";
 import { FunctionComponents } from "./components/FunctionComponent";
 import Count from "./components/Count";
 import Button from "./components/Button";
+import ComponentuseMemo from "./components/ComponentuseMemo";
+import CustomHooks from "./components/CustomHooks";
 
  /*  const [visible , setVisible ] = useState(true);  */
    
@@ -27,11 +29,16 @@ import Button from "./components/Button";
   return (
     
     <div className="container">
-          
-          <div>
+          <CustomHooks />
+            
+       
+        {/*   <ComponentuseMemo /> */}
+            
+         
+         {/*  <div>
               Count : {count} 
               <Button type="" onClick={incrementCallback}>Increment </Button>
-          </div>
+          </div> */}
             
          {/*      <Header />
               { authContext.auth.email ? 'Welcome' :
@@ -97,4 +104,4 @@ function AppWithSrore () {
   
 }
 
-export default Appclass; 
+export default App; 
